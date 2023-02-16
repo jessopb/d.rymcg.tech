@@ -4,4 +4,4 @@ include ${ROOT_DIR}/_scripts/Makefile.projects
 .PHONY: config-hook
 config-hook:
 	@${BIN}/reconfigure_ask ${ENV_FILE} PLAUSIBLE_TRAEFIK_HOST "Enter the plausible domain name" plausible.${ROOT_DOMAIN}
-	@${BIN}/reconfigure ${ENV_FILE} PLAUSIBLE_SECRET_KEY_BASE=$(shell openssl rand -hex 64)
+	@${BIN}/reconfigure_password ${ENV_FILE} PLAUSIBLE_SECRET_KEY_BASE 64
